@@ -103,36 +103,11 @@ Would you continue writing this beautiful story with me?
     </div>
   </div>
 
-<script>
-const containers = document.querySelectorAll('.img-container');
-
-containers.forEach(container => {
-  const comment = container.querySelector('.img-comment');
-
-  container.addEventListener('click', (e) => {
-    e.stopPropagation(); // prevent closing immediately
-
-    // Hide all other comments first
-    document.querySelectorAll('.img-comment').forEach(c => {
-      if (c !== comment) {
-        c.classList.remove('show');
-      }
-    });
-
-    // Toggle this comment
-    comment.classList.toggle('show');
-  });
-});
-
-// Hide all comments if clicking outside any image
-document.addEventListener('click', () => {
-  document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
-});
-</script>
-
+ <script src="script.js"></script>
 
 </body>
 </html>
+
 
 
 
