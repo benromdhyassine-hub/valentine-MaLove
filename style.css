@@ -90,11 +90,10 @@ button {
 }
 
 .gallery img {
-  width: 150px;   /* change size here */
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-  transition: 0.4s;
+  width: 150px;      /* control size here */
+  height: auto;      /* keeps proportions */
+  object-fit: cover; /* protects shape */
+  border-radius: 15px;
 }
 
 .gallery img:hover {
@@ -106,4 +105,5 @@ button {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
