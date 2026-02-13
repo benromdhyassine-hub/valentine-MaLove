@@ -1,32 +1,56 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  color: white;
-  overflow-x: hidden;
 }
 
-/* QUESTION PAGE */
-.question-page {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+.romantic-bg {
   height: 100vh;
+  background: url("https://images.unsplash.com/photo-1518199266791-5375a83190b7") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card {
-  background: rgba(255,255,255,0.15);
-  padding: 50px;
+.question-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 60px;
   border-radius: 25px;
+  text-align: center;
   backdrop-filter: blur(15px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  animation: fadeIn 1.5s ease-in-out;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  color: white;
+  max-width: 600px;
+  animation: fadeIn 1.5s ease;
 }
 
-h1 {
-  font-size: 32px;
-  margin-bottom: 30px;
+.question-card h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 button {
@@ -35,52 +59,35 @@ button {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  margin: 15px;
   transition: 0.3s;
 }
 
-button:hover {
-  transform: scale(1.1);
-}
-
-button:first-child {
-  background: #ff69b4;
+.yes-btn {
+  background: linear-gradient(45deg, #ff4e50, #ff6a88);
   color: white;
 }
 
-#noBtn {
+.yes-btn:hover {
+  transform: scale(1.1);
+}
+
+.no-btn {
   background: white;
-  color: #ff416c;
+  color: #ff4e50;
 }
 
-/* LOVE PAGE */
-.love-page {
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  min-height: 100vh;
-  padding: 60px 20px;
-}
-
-.love-container {
-  max-width: 900px;
-  margin: auto;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.love-container p {
-  font-size: 20px;
-  line-height: 1.8;
-  margin-bottom: 40px;
-}
-
+/* LOVE PAGE GALLERY */
 .gallery {
   display: flex;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .gallery img {
-  width: 150px;
+  width: 150px;   /* change size here */
+  height: auto;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.4);
   transition: 0.4s;
@@ -90,8 +97,8 @@ button:first-child {
   transform: scale(1.1);
 }
 
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
