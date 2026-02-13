@@ -7,11 +7,16 @@
 }
 
 body {
-  height: flex;
+  /*height: flex;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(135deg, #ff9acb, #ff4e88);*/
+    /* Remove height: 100vh and flex centering */
   background: linear-gradient(135deg, #ff9acb, #ff4e88);
+  min-height: 100vh;   /* allows the page to grow naturally */
+  display: block;      /* default layout */
+  padding: 20px;       /* optional spacing */
 }
 
 .romantic-bg {
@@ -115,8 +120,13 @@ button {
 }
 
 .img-container {
-  position: relative; /* needed for absolute positioning of comment */
+  /* position: relative; /* needed for absolute positioning of comment */
+  /*cursor: pointer;*/
+
+  position: relative;
   cursor: pointer;
+  touch-action: manipulation; /* improves touch responsiveness */
+
 }
 
 /* Hidden comment popup */
@@ -160,6 +170,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
