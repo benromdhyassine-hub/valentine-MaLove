@@ -1,4 +1,4 @@
-* {
+* {  
   margin: auto;
   padding: 0;
   box-sizing: border-box;
@@ -116,42 +116,46 @@ button {
 }
 
 .img-container {
-  /* position: relative; /* needed for absolute positioning of comment */
-  /*cursor: pointer;*/
-
   position: relative;
   cursor: pointer;
-  touch-action: manipulation; /* improves touch responsiveness */
-
+  touch-action: manipulation; /* improves mobile taps */
 }
 
-/* Hidden comment popup */
 .img-comment {
-  display: none; /* hide by default */
+  display: none; /* hidden by default */
   position: absolute;
-  bottom: 110%; /* appear above the image */
+  bottom: 110%; /* above the image */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 78, 136, 0.95); /* pinkish background */
+  background: rgba(255, 78, 136, 0.95);
   color: white;
   padding: 10px 15px;
   border-radius: 10px;
   font-size: 14px;
-  white-space: nowrap;
-  max-width: 200px;        /* prevent it from being too wide */
-  word-wrap: break-word;    /* break long text */
   text-align: center;
+  white-space: nowrap;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  z-index: 10;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
 }
 
-/* Show the comment */
 .img-comment.show {
   display: block;
   opacity: 1;
   transform: translateX(-50%) translateY(-5px);
+}
+
+@media (max-width: 500px) {
+  .gallery img {
+    width: 100px;
+  }
+
+  .img-comment {
+    font-size: 12px;
+    padding: 6px 10px;
+    max-width: 180px;
+  }
 }
 
 
@@ -166,6 +170,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
