@@ -89,6 +89,7 @@ button {
 
 /* LOVE PAGE GALLERY */
 .gallery {
+  text-align: center;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -119,6 +120,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
