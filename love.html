@@ -28,59 +28,77 @@ Would you continue writing this beautiful story with me?
     </p>
 
     <div class="gallery">
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic1.jpg">
+      <div class="img-container">
+       <img src="images/Pic1.jpg" alt="Pic1">
+        <div class="img-comment">This is our first memory ❤️</div>
         </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic2.jpg">
+      <div class="img-container">
+       <img src="images/Pic2.jpg" alt="Pic2">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic3.jpg">
+      <div class="img-container">
+       <img src="images/Pic3.jpg" alt="Pic3">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic4.jpg">
+      <div class="img-container">
+       <img src="images/Pic4.jpg" alt="Pic4">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic5.jpg">
+      <div class="img-container">
+       <img src="images/Pic5.jpg" alt="Pic5">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic6.jpg">
+      <div class="img-container">
+       <img src="images/Pic6.jpg" alt="Pic6">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic7.jpg">
+      <div class="img-container">
+       <img src="images/Pic7.jpg" alt="Pic7">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic8.jpg">
+      <div class="img-container">
+       <img src="images/Pic8.jpg" alt="Pic8">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic9.jpg">
+      <div class="img-container">
+       <img src="images/Pic9.jpg" alt="Pic9">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic10.jpg">
+      <div class="img-container">
+       <img src="images/Pic10.jpg" alt="Pic10">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic11.jpg">
+      <div class="img-container">
+       <img src="images/Pic11.jpg" alt="Pic11">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic12.jpg">
+      <div class="img-container">
+       <img src="images/Pic12.jpg" alt="Pic12">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic13.jpg">
+      <div class="img-container">
+       <img src="images/Pic13.jpg" alt="Pic13">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic14.jpg">
+      <div class="img-container">
+       <img src="images/Pic14.jpg" alt="Pic14">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic15.jpg">
+      <div class="img-container">
+       <img src="images/Pic15.jpg" alt="Pic15">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic16.jpg">
+      <div class="img-container">
+       <img src="images/Pic16.jpg" alt="Pic16">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic17.jpg">
+      <div class="img-container">
+       <img src="images/Pic17.jpg" alt="Pic17">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
-      <div class="img-container" data-text="This is in our last adventure together ❤️">
-       <img src="images/Pic18.jpg">
+      <div class="img-container">
+       <img src="images/Pic18.jpg" alt="Pic18">
+        <div class="img-comment">This is our first memory ❤️</div>
            </div>
     </div>
   </div>
@@ -91,38 +109,32 @@ Would you continue writing this beautiful story with me?
   <p class="modal-text"></p>
 </div>
 <script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = modal.querySelector(".modal-img");
-  const modalText = modal.querySelector(".modal-text");
-  const closeBtn = modal.querySelector(".close");
+  const containers = document.querySelectorAll('.img-container');
 
-  // Get all image containers
-  const images = document.querySelectorAll(".img-container");
+  containers.forEach(container => {
+    const comment = container.querySelector('.img-comment');
 
-  images.forEach(imgContainer => {
-    imgContainer.addEventListener("click", () => {
-      const img = imgContainer.querySelector("img");
-      modal.style.display = "flex";
-      modalImg.src = img.src;
-      modalText.textContent = imgContainer.getAttribute("data-text");
+    container.addEventListener('click', (e) => {
+      // Hide all other comments first
+      document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
+
+      // Toggle the clicked one
+      comment.classList.toggle('show');
     });
   });
 
-  // Close modal on click
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Also close modal when clicking outside the image
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
+  // Optional: hide comment if clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.img-container')) {
+      document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
     }
   });
 </script>
 
+
 </body>
 </html>
+
 
 
 
