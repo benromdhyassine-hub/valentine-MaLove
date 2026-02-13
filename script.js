@@ -12,44 +12,31 @@ function goToLove() {
   window.location.href = "love.html";
 }
 
-function goToLove() {
-  window.location.href = "love.html";
-}
+
 
 // ==========================
 // IMAGE COMMENTS POPUP (LOVE.HTML)
 // ==========================
-const containers = document.querySelectorAll('.img-container');
+containers.forEach(container => {
+  const comment = container.querySelector('.img-comment');
 
-if (containers.length > 0) { // only run if .img-container exists
-  containers.forEach(container => {
-    const comment = container.querySelector('.img-comment');
+  const toggleComment = (e) => {
+    e.stopPropagation();
 
-    const toggleComment = (e) => {
-      e.stopPropagation(); // prevent closing immediately
+    document.querySelectorAll('.img-comment').forEach(c => {
+      if (c !== comment) c.classList.remove('show');
+    });
 
-      // Hide all other comments
-      document.querySelectorAll('.img-comment').forEach(c => {
-        if (c !== comment) {
-          c.classList.remove('show');
-        }
-      });
-
-      // Toggle this comment
-      comment.classList.toggle('show');
-    };
-
-    // Listen for click and touch (mobile-friendly)
-    container.addEventListener('click', toggleComment);
-    container.addEventListener('touchstart', toggleComment);
-  });
-
-  // Hide all comments if clicking/touching outside
-  const hideAllComments = () => {
-    document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
+    comment.classList.toggle('show');
   };
 
-  document.addEventListener('click', hideAllComments);
-  document.addEventListener('touchstart', hideAllComments);
-}
+  container.addEventListener('click', toggleComment);
+  container.addEventListener('touchstart', toggleComment);
+});
 
+document.addEventListener('click', () => {
+  document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
+});
+document.addEventListener('touchstart', () => {
+  document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
+});
