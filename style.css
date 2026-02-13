@@ -15,7 +15,7 @@ body {
   padding: 20px;       /* optional spacing */
 }
 
-#countdown-container {
+countdown-container {
   text-align: center;
   margin-top: 50px;
   color: white;
@@ -24,7 +24,7 @@ body {
   text-shadow: 0 0 10px rgba(255, 78, 136, 0.8);
 }
 
-#countdown {
+countdown {
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -183,6 +183,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
