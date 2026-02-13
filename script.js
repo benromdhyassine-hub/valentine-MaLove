@@ -1,3 +1,29 @@
+// Set the date/time for the countdown (YYYY-MM-DD HH:MM:SS)
+const targetDate = new Date("2026-02-14 00:00:00").getTime(); // e.g., Valentine's Day
+
+const countdownElement = document.getElementById("countdown");
+
+const countdownTimer = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+    clearInterval(countdownTimer);
+    countdownElement.innerHTML = "💖 The page is now open! 💖";
+    document.querySelector('.overlay').style.display = "block"; // show the content
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
+
+
+
 const noBtn = document.getElementById("noBtn");
 
 noBtn.addEventListener("mouseover", () => {
@@ -41,3 +67,4 @@ const hideAllComments = () => {
 
 document.addEventListener('click', hideAllComments);
 document.addEventListener('touchstart', hideAllComments);
+
