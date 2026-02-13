@@ -1,26 +1,38 @@
-// Set the date/time for the countdown (YYYY-MM-DD HH:MM:SS)
-const targetDate = new Date("2026-02-14 00:00:00").getTime(); // e.g., Valentine's Day
-
+// ===============================
+// COUNTDOWN TO MIDNIGHT
+// ===============================
 const countdownElement = document.getElementById("countdown");
+const overlay = document.querySelector('.overlay'); // hide until countdown ends
 
-const countdownTimer = setInterval(() => {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+function updateCountdown() {
+  const now = new Date();
+
+  // set target midnight (today or tomorrow if already passed)
+  const midnight = new Date();
+  midnight.setHours(24, 0, 0, 0); // midnight tonight
+
+  const distance = midnight - now;
 
   if (distance <= 0) {
-    clearInterval(countdownTimer);
     countdownElement.innerHTML = "💖 The page is now open! 💖";
-    document.querySelector('.overlay').style.display = "block"; // show the content
+    overlay.style.display = "block"; // show the main content
+    clearInterval(timerInterval);
     return;
   }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-}, 1000);
+  countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+}
+
+// Hide the overlay initially
+overlay.style.display = "none";
+
+// Update every second
+const timerInterval = setInterval(updateCountdown, 1000);
+updateCountdown(); // run immediately to avoid 1-second delay
 
 
 
@@ -67,4 +79,5 @@ const hideAllComments = () => {
 
 document.addEventListener('click', hideAllComments);
 document.addEventListener('touchstart', hideAllComments);
+
 
