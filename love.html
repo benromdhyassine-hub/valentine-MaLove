@@ -102,38 +102,38 @@ Would you continue writing this beautiful story with me?
            </div>
     </div>
   </div>
-<!-- Popup Modal -->
-<div id="imageModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-img" src="">
-  <p class="modal-text"></p>
-</div>
+
 <script>
-  const containers = document.querySelectorAll('.img-container');
+const containers = document.querySelectorAll('.img-container');
 
-  containers.forEach(container => {
-    const comment = container.querySelector('.img-comment');
+containers.forEach(container => {
+  const comment = container.querySelector('.img-comment');
 
-    container.addEventListener('click', (e) => {
-      // Hide all other comments first
-      document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
+  container.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent closing immediately
 
-      // Toggle the clicked one
-      comment.classList.toggle('show');
+    // Hide all other comments first
+    document.querySelectorAll('.img-comment').forEach(c => {
+      if (c !== comment) {
+        c.classList.remove('show');
+      }
     });
-  });
 
-  // Optional: hide comment if clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.img-container')) {
-      document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
-    }
+    // Toggle this comment
+    comment.classList.toggle('show');
   });
+});
+
+// Hide all comments if clicking outside any image
+document.addEventListener('click', () => {
+  document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
+});
 </script>
 
 
 </body>
 </html>
+
 
 
 
