@@ -15,6 +15,19 @@ body {
   padding: 20px;       /* optional spacing */
 }
 
+#countdown-container {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 78, 136, 0.8);
+}
+
+#countdown {
+  font-family: 'Segoe UI', sans-serif;
+}
+
 .romantic-bg {
   height: 100vh;
   background: url("https://images.unsplash.com/photo-1518199266791-5375a83190b7") no-repeat center center/cover;
@@ -170,6 +183,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
