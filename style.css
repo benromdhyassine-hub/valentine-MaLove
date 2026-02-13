@@ -133,7 +133,7 @@ button {
   margin: 0 auto;
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
-
+/
 /* Modal text */
 .modal-text {
   color: white;
@@ -158,6 +158,39 @@ button {
   transform: scale(1.2);
 }
 
+.img-container {
+  position: relative; /* needed for absolute positioning of comment */
+  cursor: pointer;
+}
+
+/* Hidden comment popup */
+.img-comment {
+  display: none; /* hide by default */
+  position: absolute;
+  bottom: 110%; /* appear above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 78, 136, 0.95); /* pinkish background */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show the comment */
+.img-comment.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -169,6 +202,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
