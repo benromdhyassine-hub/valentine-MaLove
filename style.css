@@ -1,5 +1,5 @@
 * {
-  margin: auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
@@ -176,6 +176,8 @@ button {
   border-radius: 10px;
   font-size: 14px;
   white-space: nowrap;
+  max-width: 200px;        /* prevent it from being too wide */
+  word-wrap: break-word;    /* break long text */
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   z-index: 10;
@@ -202,6 +204,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
