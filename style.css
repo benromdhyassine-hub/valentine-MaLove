@@ -7,11 +7,7 @@
 }
 
 body {
-  /*height: flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ff9acb, #ff4e88);*/
+ 
     /* Remove height: 100vh and flex centering */
   background: linear-gradient(135deg, #ff9acb, #ff4e88);
   min-height: 100vh;   /* allows the page to grow naturally */
@@ -170,6 +166,7 @@ button {
     justify-content: center;
   }
 }
+
 
 
 
