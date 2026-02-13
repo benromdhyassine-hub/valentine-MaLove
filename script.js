@@ -34,9 +34,10 @@ containers.forEach(container => {
   container.addEventListener('touchstart', toggleComment);
 });
 
-document.addEventListener('click', () => {
+// Hide all comments if clicking/touching outside
+const hideAllComments = () => {
   document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
-});
-document.addEventListener('touchstart', () => {
-  document.querySelectorAll('.img-comment').forEach(c => c.classList.remove('show'));
-});
+};
+
+document.addEventListener('click', hideAllComments);
+document.addEventListener('touchstart', hideAllComments);
